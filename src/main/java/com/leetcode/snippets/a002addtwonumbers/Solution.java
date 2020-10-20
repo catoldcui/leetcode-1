@@ -22,9 +22,40 @@ import cn.hjmao.utils.list.ListNode;
 
 
 public class Solution {
-  protected static final boolean SOLUTION_DONE = false;
+    protected static final boolean SOLUTION_DONE = true;
 
-  public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    return null;
-  }
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode res = null;
+        int acc = 0;
+        ListNode cur = new ListNode(0);
+        while (l1 != null && l2 != null) {
+            int sum = l1.val + l2.val + acc;
+            acc = sum / 10;
+            l1 = l1.next;
+            l2 = l2.next;
+            cur.next = new ListNode(sum % 10);
+            if (res == null) {
+                res = cur.next;
+            }
+            cur = cur.next;
+        }
+        while (l1 != null) {
+            int sum = l1.val + acc;
+            acc = sum / 10;
+            cur.next = new ListNode(sum % 10);
+            l1 = l1.next;
+            cur = cur.next;
+        }
+        while (l2 != null) {
+            int sum = l2.val + acc;
+            acc = sum / 10;
+            cur.next = new ListNode(sum % 10);
+            l2 = l2.next;
+            cur = cur.next;
+        }
+        if (acc == 1) {
+            cur.next = new ListNode(1);
+        }
+        return res;
+    }
 }

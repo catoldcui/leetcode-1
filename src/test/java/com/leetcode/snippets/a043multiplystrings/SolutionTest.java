@@ -90,4 +90,13 @@ public class SolutionTest {
     String actual = this.solution.multiply(num1, num2);
     assertEquals(actual, expected);
   }
+
+  @Test (enabled = Solution.SOLUTION_DONE)
+  public void testMultiply10() throws Exception {
+    String num1 = "123";
+    String num2 = "456";
+    String expected = "56088";
+    String actual = this.solution.multiply(num1, num2);
+    assertEquals(actual, expected);
+  }
 }

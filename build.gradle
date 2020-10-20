@@ -81,11 +81,12 @@ jacocoTestReport {
     xml.enabled = true
   }
   afterEvaluate {
-//    getClassDirectories().setFrom(
-    classDirectories = files(classDirectories.files.collect {
-      fileTree(dir: it, excludes: ['**/com/leetcode/**', 'src/main/java/cn/hjmao/ProblemFetcher*'])
-    })
-//    )
+    getClassDirectories().setFrom(
+//    classDirectories =
+            files(classDirectories.files.collect {
+      fileTree(dir: it, excludes: ['**/com/leetcode/**', 'src/main/java/cn/hjmao/ProblemFetcher*'])})
+//    })
+    )
   }
 }
 

@@ -17,4 +17,14 @@ public class SolutionTest {
     int[] actual = solution.twoSum(numbers, target);
     assertEquals(actual, expected);
   }
+
+  @Test (enabled = Solution.SOLUTION_DONE)
+  public void testTwoSum2() {
+    int[] numbers = {2,3,4};
+    int target = 6;
+
+    int[] expected = {1, 3};
+    int[] actual = solution.twoSum(numbers, target);
+    assertEquals(actual, expected);
+  }
 }

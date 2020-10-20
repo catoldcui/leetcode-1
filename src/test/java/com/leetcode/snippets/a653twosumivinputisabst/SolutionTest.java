@@ -36,4 +36,13 @@ public class SolutionTest {
     boolean actual = solution.findTarget(root, k);
     assertFalse(actual);
   }
+
+  @Test (enabled = Solution.SOLUTION_DONE)
+  public void testFindTarget4() {
+    Integer[] nums = {2,1,3};
+    TreeNode root = TreeNodeUtils.fromArray(nums);
+    int k = 4;
+    boolean actual = solution.findTarget(root, k);
+    assertTrue(actual);
+  }
 }
